@@ -1,0 +1,179 @@
+=== Information Group ===
+Group Information : 
+Manajer Proyek   : Iqbal Afif, A.Md.Kom
+Ketua 	         : Aldy Jhonatan Hutasoit - 4342301003
+Anggota Kelompok : 
+1. Bagas Satrio                - 4342301028
+2. Einstein                    - 4342301020
+3. Juwita Cahya Safira         - 4342301006
+4. Mufasirina Haqulianti       - 4342301029
+5. Tabina Rahmah Az-zahrawaani - 4342301023
+
+=== Scope Tugas PBL ====
+Permintaaan Diagram : 
+1. diagram per unit kerja 
+-> Bisa membandingkan antara per unit kerja 
+2. Diagram per unit kerja : 
+-> Per triwulan : 
+   1.sudah di capai 
+   2.belum di capai 
+   3.tak tercapai 
+3. Diagram per unit kerja -> pengisiaan 
+-> Per triwulan 
+   1. sudah diisi 
+   2. belum diisi
+4. Diagram secara keseluruhan 
+-> per unit kerja 3 batang , melihat sudah di capai tidak tercapai terlapaui
+5. Diagram per standar secara keseluruhan 
+-> penelitian pengabdian pendidikan pelayanan 	
+   1. tercapai
+   2. tidak tercapai 
+   3. terlampaui 
+6. diagram per standar per unit kerja 
+-> penelitian pengabdian pendidikan pelayanan 	
+   1. tercapai
+   2. tidak tercapai 
+   3. terlampaui 
+7. diagram per standar per siklus 
+-> 1. tercapai
+   2. tidak tercapai 
+   3. terlampaui 
+
+
+
+
+"" Information Progress PBL ""
+Progrss SKPPL Implementasi : 
+1. Tabel capaian : 
+	a. Model - Done 
+	b. Migration - Done
+	c. ClassDiagram - Done - operasi masih kurang yakin 
+	d. Struktur Tabel - done 
+2. KebijakanSPMI : 
+	a. Model - Done 
+	b. Migration - Done
+	c. ClassDiagram - tidak digunakan karena tidak diperlukan
+	d. Struktur Tabel - done 
+3. Manual : 
+	a. model - done
+	b. Migration - done
+	c. ClassDiagram - done
+	d. Struktur tabel - done 
+4. siklus : 
+	a. model - done
+	b. Migration - done
+	c. ClassDiagram - done
+	d. Struktur tabel - done 
+5. standar : 
+	a. model - done
+	b. Migration - done
+	c. ClassDiagram - done
+	d. Struktur tabel - done 
+6. Substandar : 
+	a. model - done
+	b. Migration - done
+	c. ClassDiagram - done
+	d. Struktur tabel - done 
+7. targetmutu : 
+	a. model - done
+	b. Migration - done
+	c. ClassDiagram - done
+	d. Struktur tabel - done 
+8. User : 
+	a. model - done
+	b. Migration - done
+	c. ClassDiagram - done
+	d. Struktur tabel - done
+9. Unit Keja : 
+	a. model - done
+	b. Migration - done
+	c. ClassDiagram - done
+	d. Struktur tabel - done
+
+Progress View Laravel : 
+1. P4M 
+	a. Dashboard -> 
+
+Dokumentasi Progress 
+A. Daftar Tabel : 
+	1. Tabel User ->  mengandung Informasi dari pengguna sistem 
+		Struktur Tabel User : 
+		a. id -> Generate ID -> Str::uuid()->toString(); -> Primary Key 
+	        b. id_unitkerja -> unitkerja(id_unitkerja)
+		c. nama -> Nama Pengguna
+        	d. role -> Jabatan yang di naungi oleh pengguna 
+        	d. jk 	-> Jenis Kelamin pengguna
+	        e. email -> Email Pengguna -> API Polibatam
+   	     	f. notelp -> Nomor telepon pengguna
+        	g. UrlProfile -> Url Path Storage
+	2. Tabel capaian -> Tabel yang berisikan informasi jawabana antar unit kerja yang sedang dinilai dan auditor yang menilai hasil kinerja 
+		Struktur tabel capaian : 
+		a. id_capaian 		-> Primary Key 
+		b. id_target 		-> targetmutu(id_target)
+		c. Triwulan 		-> terbagi 4 triwulan 
+		d. penilaian_pengguna 	-> penilaian sendiri dari hasil yang dikerjakan oleh unit kerja 
+		e. uraian_pengguna 	-> Berisikan penjelasan lebih detail hasil yang dikerjakan oleh unit kerja 
+		f. penilaian_auditor	-> Respon balik dari kinerja unit kerja 
+		g. uraian_auditor 	-> Berisikan penjelasan Respon balik dari kinerja unit kerja 
+		h. link_dokumen 	-> berisikan link dokumen unit kerja 
+
+
+Implementasi  Progress	
+1. Model : 
+	1. Unitkeja -> migration -> model -> Seeder 
+	2. User -> migration -> model -> Seeder	(Nim Anggota Kelompok)
+	3. siklus -> migration -> model -> Seeder
+	4. standar -> migration -> model -> Seeder
+	5. substandar -> migration -> model
+	6. Manual -> migration -> model  -> seeder
+	7. capaian -> migration -> model -> seeder
+	8. Target Mutu -> migration -> Model -> seeder
+	9. KebijakanSPMI -> migration -> model 
+2. Controller
+	a. AuthController  		-> Controller yang menangani Fungsional login ,insert data akun pengguna dari api , dan logout 
+	b. GrafikOlahController -> Controller yang menangani semua olahan data dari
+
+## Parameter grafik
+PARAMETER PENILAIAN_AUDITOR :
+1. Tidak Tercapai 
+2. Tercapai 
+3. Terlampui 
+
+PARAMETER Triwulan :
+1. Triwulan I -> Januari sampai Maret
+2. Triwulan II -> April sampai Juni 
+3. Triwulan III -> Juli sampai September 
+4. Triwulan IV -> Oktober Sampai Desember
+
+Kebutuhan Fungsional  : 
+SKPPL-F001	Pengguna dapat melakukan autentikasi ke dalam sistem 
+		-> Berhasil (Filter id berdasarkan ID yang didaftarkan(NIM atau NIK) - id_unitkerja) -> Middleware (Auth->Role:?) user -> Done
+
+SKPPL-F002	P4M dan Manajemen dapat melihat grafik pencapaian per triwulan tertentu 
+		-> Berhasil (capaian -> Status penilaian Auditor dan Triwulan) -> Berhasil ditampilkan -> Done
+
+SKPPL-F003	Pengguna dapat melihat grafik pengisian  target mutu per unit kerja 
+		-> berhasil (Target Mutu parameter id_target (capaian)) -> Berhasil ditampilkan -> Done
+
+SKPPL-F004	P4M dan Manajemen dapat melihat grafik pencapain unit kerja 
+		-> Berhasil ( Status penilaian Auditor dan id_unitkerja(tabelMutu)) -> Berhasil ditampilkan -> Done
+
+SKPPL-F005	P4M dan Manajemen dapat melihat grafik pencapaian per standar dalam unit kerja 
+		-> Berhasil (Target Mutu parameter id_target (capaian)) -> Berhasil ditampilkan -> Done
+
+SKPPL-F006	Pengguna dapat melihat grafik pencapaian per standar dalam siklus tertentu 
+		-> Berhasil (Capaian -> id_target -> Targetmutu(id_target) -> Targetmutu(id_siklus))
+
+SKPPL-F007	P4M dan Manajemen dapat melihat grafik pembanding antar unit kerja -> 
+		-> Target Mutu Parameter id_unitkerja -> Berhasil dengan menampilkan 2 id_unitkerja -> Triwulan secara sekaligus
+
+SKPPL-F009	Pengguna dapat melakukan pembaruan data profile
+		-> Perbaiki Struktur Data -> Done -> Terjadi Bentrok API Polibatam
+
+SKPPL-F008	P4M dapat melakukan manajemen akun 
+		-> Menambahkan -> Menghapus -> Melakukan Update -> Done (Manual berdasarkan ID yang di tambahkan)
+
+
+
+SECRET Query : 
+INSERT INTO `user` (`id`, `id_unitkerja`, `NIK`, `nama`, `email`, `jk`, `role`, `notelp`, `photoProfile`, `created_at`, `updated_at`) VALUES ('1', '1', '4342301003', '', '', 'P', '', '', '', '2024-05-30 19:52:38', '2024-05-30 19:52:38');
